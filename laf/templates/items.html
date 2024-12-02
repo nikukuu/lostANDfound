@@ -24,6 +24,14 @@
     <div class="image-section">
         <h1>Lost and Found Items</h1>
     </div>
+
+        <div class="search-bar">
+        <form action="{{ url_for('items.items') }}" method="GET">
+            <input type="text" name="query" placeholder="Search for items..."
+                value="{{ request.args.get('query', '') }}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     
     <div class="container">
         {% for item in items %}
