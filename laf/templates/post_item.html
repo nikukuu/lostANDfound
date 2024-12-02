@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/post_item.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post an item</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ url_for('items.items') }}">Lost and Found</a></li>
+                <li><a href="{{ url_for('post_item.post_item') }}">Post an Item</a></li>
+                <li><a href="{{ url_for('contact_us.contact_us')}}">Contact Us</a></li>
+                <li><a href="{{ url_for('about_us')}}">About Us</a></li>
+            </ul>
+            <a href="{{ url_for('admin.admin_login')}}" class="login-button">Admin</a>
+        </nav>
+    </header>
+
+    <div class="image-section">
+        <h1>Post A Found Item</h1>
+    </div>
+
+    <div class="container">
+        
+        {% if success_message %}
+        <p style="color: green; font-weight: bold;">{{ success_message }}</p>
+        {% endif %}
+
+        <form action="{{ url_for('post_item.post_item') }}" method="POST" enctype="multipart/form-data">
+            <label for="item_name">Item Name:</label>
+            <input type="text" id="item_name" name="item_name" required>
+        
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        
+            <label for="location">Location Found:</label>
+            <input type="text" id="location" name="location" required>
+        
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+        
+            <button type="submit">Submit Item</button>
+        </form>
+        
+    </div>
+</body>
+</html>

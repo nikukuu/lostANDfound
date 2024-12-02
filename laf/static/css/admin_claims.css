@@ -1,0 +1,47 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+    table-layout: auto; /* Ensures content auto-fits columns */
+}
+
+/* Header and row styling */
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    word-wrap: break-word; /* Ensures long text wraps within cells */
+}
+
+/* Header row styling */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Button styling */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.content {
+    margin-left: 270px; /* Adjusted to fit the sidebar width */
+    padding: 20px;
+}
+
+/* Flash message styling */
+.flash-message {
+    color: #e74c3c;
+    margin-bottom: 10px;
+    font-weight: bold;
+}

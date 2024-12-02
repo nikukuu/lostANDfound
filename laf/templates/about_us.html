@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ url_for('items.items') }}">Lost and Found</a></li>
+                <li><a href="{{ url_for('post_item.post_item') }}">Post an Item</a></li>
+                <li><a href="{{ url_for('contact_us.contact_us')}}">Contact Us</a></li>
+                <li><a href="{{ url_for('about_us')}}">About Us</a></li>
+            </ul>
+            <a href="{{ url_for('admin.admin_login')}}" class="login-button">Admin</a>
+        </nav>
+    </header>
+
+    <div class="image-section">
+        <h1>About us here</h1>
+    </div>
+</body>
+</html>
