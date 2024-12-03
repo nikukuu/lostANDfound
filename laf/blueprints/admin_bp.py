@@ -89,17 +89,25 @@ def admin_dashboard():
 
     connection = get_db_connection()
     cursor = connection.cursor()
+
+    # Fetch counts for pending, published, and claimed items
     cursor.execute("SELECT COUNT(*) FROM items WHERE status = 'pending'")
     pending_count = cursor.fetchone()[0]
+
     cursor.execute("SELECT COUNT(*) FROM items WHERE status = 'published'")
     published_count = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM items WHERE status = 'claimed'")
+    claimed_count = cursor.fetchone()[0]
+
     cursor.close()
     connection.close()
 
     return render_template(
         'admin_dashboard.html',
         pending_count=pending_count,
-        published_count=published_count
+        published_count=published_count,
+        claimed_count=claimed_count
     )
 
 
